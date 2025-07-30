@@ -274,7 +274,7 @@ def generate():
     返回：
         deepseek生成的专业植物脚本
     """
-    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "sk-f4cfa3d9ef8a4d68a3e103f98629beeb")
+    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "Your_Key")
     DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
     DEEPSEEK_MODEL = "deepseek-chat"
     data = request.json
@@ -340,7 +340,7 @@ def script_suggestions():
     返回：
         脚本建议
     """
-    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "sk-f4cfa3d9ef8a4d68a3e103f98629beeb")
+    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "Your_Key")
     DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
     DEEPSEEK_MODEL = "deepseek-chat"
 

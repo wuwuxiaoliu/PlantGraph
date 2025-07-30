@@ -1,0 +1,464 @@
+/* 页面基础设置 */
+html, body {
+  margin: 10px;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f5f5f5;
+}
+
+/* 主内容容器 */
+#main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* 搜索栏区域 */
+#search-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* 表单控件统一字体 */
+input, textarea, button {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* 搜索输入框 */
+input[type="text"] {
+  flex: 1;
+  padding: 6px;
+}
+
+/* 通用按钮样式 */
+button {
+  padding: 6px 12px;
+}
+
+/* 图例区域样式 */
+#legend {
+  font-size: 12px;
+  background: #fff8e1;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* 图谱渲染容器样式 */
+svg {
+  width: 100%;
+  height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* 图谱悬浮提示框样式 */
+.tooltip {
+  position: absolute;
+  padding: 6px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  display: none;
+}
+
+/* 多行输入框样式 */
+textarea.input-box {
+  margin: 0;
+  padding: 6px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* 植物信息表格样式 */
+#plant-info td {
+  padding: 6px 10px;
+  vertical-align: top;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+#plant-info td:first-child {
+  width: 140px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 按钮通用样式 */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #607D8B;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #546E7A;
+}
+
+/* 结果展示卡片 */
+.result-card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  background: #fff;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* 字段标签样式 */
+.field-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* 输入框统一样式 */
+.input-box {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.input-box[type="number"] {
+  height: 38px;
+  line-height: normal;
+}
+
+/* 自动补全下拉建议框 */
+#suggestions {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.suggestion-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* AI 脚本生成卡片区域 */
+.ai-card {
+  border: 1px solid #ccc;
+  background: #fafafa;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.ai-card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 18px;
+  border-left: 4px solid #607D8B;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.ai-card .input-group {
+  margin-bottom: 12px;
+}
+
+.ai-card .input-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
+}
+
+/* AI结果输出区域 */
+.result-area {
+  height: 200px;
+  background: #fff;
+  font-family: "Courier New", monospace;
+  line-height: 1.4;
+}
+
+.ai-card .btn-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+/* 脚本建议卡片区域 */
+.script-card {
+  margin-top: 20px;
+  background: #fdfdfd;
+  border-left: 4px solid #607D8B;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.script-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 5px;
+}
+
+/* 脚本文本输出框 */
+.script-output {
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: "Courier New", Consolas, monospace;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* 滚动条美化 */
+.script-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.script-output::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.script-output::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.script-output::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* AI卡片与脚本卡片统一外观 */
+.ai-card, .script-card {
+  border: 1px solid #ddd;
+  background: #fdfdfd;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+/* 标题样式统一 */
+.ai-title, .script-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  padding-left: 8px;
+  border-left: 4px solid #607D8B;
+}
+
+/* 输入组布局 */
+.input-group {
+  margin-bottom: 12px;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.result-area {
+  background: #f9f9f9;
+  height: 200px;
+  font-family: "Courier New", Consolas, monospace;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* 按钮组布局 */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 信息卡片区域 */
+.info-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-top: 20px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.info-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  border-left: 4px solid #607D8B;
+  padding-left: 8px;
+}
+
+/* 表格样式 */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.info-table td {
+  padding: 8px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+
+.info-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.info-table td:first-child {
+  width: 150px;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+}
+
+.info-table td:last-child {
+  color: #333;
+  word-break: break-word;
+}
+
+/* 分类树项样式 */
+.taxonomy-item {
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 3px;
+  margin: 2px 0;
+}
+
+.taxonomy-item:hover {
+  background: #e6f2ff;
+}
+
+.taxonomy-item.family {
+  font-weight: bold;
+  color: #2e6da4;
+}
+
+.taxonomy-item.genus {
+  font-weight: bold;
+  margin-left: 10px;
+  color: #3c763d;
+}
+
+.taxonomy-item.plant {
+  margin-left: 20px;
+  color: #555;
+  cursor: default;
+}
+
+.taxonomy-sublist {
+  margin-left: 15px;
+}
+
+/* 通用隐藏类 */
+.hidden {
+  display: none;
+}
+
+/* 页面布局容器 */
+#page-layout {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#left-panel {
+  flex: 1 1 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+#taxonomy-panel {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+#taxonomy-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 12px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+}
+
+/* 响应式布局适配 */
+@media (max-width: 1024px) {
+  #page-layout {
+    flex-direction: column;
+  }
+  #taxonomy-panel {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+}
+
+/* 分类项高亮样式 */
+.taxonomy-item.selected {
+  background: #e0f3ff;
+  color: #1976d2;
+  font-weight: 600;
+}

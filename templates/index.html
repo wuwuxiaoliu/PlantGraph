@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>PlantGraph</title>
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+  <div id="page-layout">
+
+    <!-- 左侧主要内容 -->
+    <div id="left-panel">
+      <div id="main-container">
+        <div id="search-box" style="position: relative;">
+          <input type="text" id="search" placeholder="请输入植物名称...">
+          <div id="suggestions"></div>
+          <button class="btn" id="search-btn">查询图谱</button>
+          <button class="btn" id="clear-btn">清除</button>
+          <button class="btn" id="back-btn">返回</button>
+        </div>
+
+        <div id="legend">
+          <strong>图例：</strong>
+          <span style="color:#4CAF50">● 植物名称</span>
+          <span style="color:#9E9E9E">● 拉丁学名</span>
+          <span style="color:#9C27B0">● 别名</span>
+          <span style="color:#2196F3">● 科</span>
+          <span style="color:#3F51B5">● 属</span>
+          <span style="color:#008B8B">● 药用价值</span>
+          <span style="color:#FF5722">● 国内分布地</span>
+          <span style="color:#FFC107">● 国际分布地</span>
+        </div>
+
+        <svg></svg>
+        <div class="tooltip" id="tooltip"></div>
+
+        <div id="prompt-section">
+          <div id="plant-info-card" class="info-card">
+            <h3 class="info-title">植物信息</h3>
+            <table class="info-table">
+              <tbody id="plant-info">
+                <tr><td>植物名称：</td><td id="field-名称"></td></tr>
+                <tr><td>植物特征：</td><td id="field-特征"></td></tr>
+                <tr><td>药用价值：</td><td id="field-治疗"></td></tr>
+                <tr><td>拉丁学名：</td><td id="field-拉丁学名"></td></tr>
+                <tr><td>科：</td><td id="field-属于科"></td></tr>
+                <tr><td>属：</td><td id="field-属于属"></td></tr>
+                <tr><td>国内分布于：</td><td id="field-国内分布于"></td></tr>
+                <tr><td>国际分布于：</td><td id="field-国际分布于"></td></tr>
+                <tr><td>生境：</td><td id="field-生境"></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="script-section" class="script-card">
+            <h3 class="script-title">脚本建议</h3>
+            <pre id="script-output" class="script-output"></pre>
+          </div>
+        </div>
+
+        <div id="ai-script-section" class="ai-card">
+          <h3 class="ai-title">AI定制植物文案</h3>
+          <div class="input-group">
+            <label for="n-value">生成数量：</label>
+            <input type="number" id="n-value" class="input-box" value="1" min="1" max="10">
+          </div>
+          <div class="input-group">
+            <label for="user-addition">个性化要求：</label>
+            <textarea id="user-addition" class="input-box" rows="3" placeholder="请输入补充信息..."></textarea>
+          </div>
+          <div class="input-group">
+            <label for="result-output">植物文案：</label>
+            <textarea id="result-output" class="input-box result-area" rows="8" readonly></textarea>
+          </div>
+          <div class="btn-group">
+            <button class="btn" id="generate-btn">生成结果</button>
+            <button class="btn" id="copy-btn">复制</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧植物分类 -->
+    <div id="taxonomy-panel">
+      <div id="taxonomy-container" class="taxonomy-card">
+        <h3>植物导航</h3>
+        <div id="taxonomy-list"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 模块化 JS 主入口 -->
+  <script type="module" src="./static/js/main.js"></script>
+</body>
+</html>
